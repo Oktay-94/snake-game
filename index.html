@@ -1,0 +1,208 @@
+/**
+ * Enterprise Software Factory - Core Utilities Module
+ * @module utils
+ * @description Common utility functions for enterprise applications
+ */
+
+/**
+ * Deep clones an object or array
+ * @param {*} obj - The object to clone
+ * @returns {*} A deep copy of the object
+ */
+export function deepClone(obj) {
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+  
+  if (obj instanceof Date) {
+    return new Date(obj.getTime());
+  }
+  
+  if (obj instanceof Array) {
+    return obj.map(item => deepClone(item));
+  }
+  
+  if (obj instanceof Object) {
+    const clonedObj = {};
+    Object.keys(obj).forEach(key => {
+      clonedObj[key] = deepClone(obj[key]);
+    });
+    return clonedObj;
+  }
+}
+
+/**
+ * Debounces a function call
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - The delay in milliseconds
+ * @returns {Function} The debounced function
+ */
+export function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+/**
+ * Formats a number as currency
+ * @param {number} amount - The amount to format
+ * @param {string} currency - The currency code (default: 'EUR')
+ * @param {string} locale - The locale (default: 'de-DE')
+ * @returns {string} Formatted currency string
+ */
+export function formatCurrency(amount, currency = 'EUR', locale = 'de-DE') {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currency
+  }).format(amount);
+}
+
+/**
+ * Validates an email address
+ * @param {string} email - The email to validate
+ * @returns {boolean} True if valid, false otherwise
+ */
+export function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+/**
+ * Generates a unique ID
+ * @returns {string} A unique identifier
+ */
+export function generateUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+/**
+ * Safely gets a nested property from an object
+ * @param {Object} obj - The object to query
+ * @param {string} path - The path to the property (e.g., 'user.address.city')
+ * @param {*} defaultValue - The default value if property doesn't exist
+ * @returns {*} The property value or default value
+ */
+export function getNestedProperty(obj, path, defaultValue = undefined) {
+  const keys = path.split('.');
+  let result = obj;
+  
+  for (const key of keys) {
+    if (result === null || result === undefined) {
+      return defaultValue;
+    }
+    result = result[key];
+  }
+  
+  return result !== undefined ? result : defaultValue;
+}
+
+/**
+ * Capitalizes the first letter of a string
+ * @param {string} str - The string to capitalize
+ * @returns {string} The capitalized string
+ */
+export function capitalize(str) {
+  if (!str || typeof str !== 'string') return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+/**
+ * Removes duplicate values from an array
+ * @param {Array} arr - The array to process
+ * @returns {Array} Array with unique values
+ */
+export function unique(arr) {
+  return [...new Set(arr)];
+}
+
+/**
+ * Groups array elements by a key
+ * @param {Array} arr - The array to group
+ * @param {string|Function} key - The key or function to group by
+ * @returns {Object} Grouped object
+ */
+export function groupBy(arr, key) {
+  return arr.reduce((result, item) => {
+    const groupKey = typeof key === 'function' ? key(item) : item[key];
+    if (!result[groupKey]) {
+      result[groupKey] = [];
+    }
+    result[groupKey].push(item);
+    return result;
+  }, {});
+}
+
+/**
+ * Truncates a string to a specified length
+ * @param {string} str - The string to truncate
+ * @param {number} length - Maximum length
+ * @param {string} suffix - Suffix to add (default: '...')
+ * @returns {string} Truncated string
+ */
+export function truncate(str, length, suffix = '...') {
+  if (!str || str.length <= length) return str;
+  return str.substring(0, length) + suffix;
+}
+
+/**
+ * Checks if a value is empty
+ * @param {*} value - The value to check
+ * @returns {boolean} True if empty, false otherwise
+ */
+export function isEmpty(value) {
+  if (value === null || value === undefined) return true;
+  if (typeof value === 'string') return value.trim().length === 0;
+  if (Array.isArray(value)) return value.length === 0;
+  if (typeof value === 'object') return Object.keys(value).length === 0;
+  return false;
+}
+
+/**
+ * Formats a date to a localized string
+ * @param {Date|string|number} date - The date to format
+ * @param {string} locale - The locale (default: 'de-DE')
+ * @returns {string} Formatted date string
+ */
+export function formatDate(date, locale = 'de-DE') {
+  const dateObj = date instanceof Date ? date : new Date(date);
+  return dateObj.toLocaleDateString(locale);
+}
+
+/**
+ * Sanitizes a string for use in HTML
+ * @param {string} str - The string to sanitize
+ * @returns {string} Sanitized string
+ */
+export function sanitizeHTML(str) {
+  const temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
+}
+
+/**
+ * Throttles a function call
+ * @param {Function} func - The function to throttle
+ * @param {number} limit - The time limit in milliseconds
+ * @returns {Function} The throttled function
+ */
+export function throttle(func, limit) {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+}
+

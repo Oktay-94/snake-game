@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Klassisches Snake-Spiel">
     <title>Snake Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1>Snake Game</h1>
-        <p class="controls">Steuerung: Pfeiltasten zum Bewegen | Leertaste für Neustart</p>
-    </header>
-    
     <main>
-        <div class="game-container">
-            <div class="score-display">
-                <span>Punkte: </span>
-                <span id="score">0</span>
-            </div>
-            
-            <canvas id="gameCanvas" width="600" height="600"></canvas>
-            
-            <div id="gameOver" class="game-over-overlay">
-                <div class="game-over-content">
-                    <h2>Game Over!</h2>
-                    <p class="final-score">Finale Punktzahl: <span id="finalScore">0</span></p>
-                    <button id="restartButton">Neustart</button>
-                </div>
-            </div>
+        <div id="startScreen" aria-label="Startbildschirm">
+            <h1>Snake Game</h1>
+            <button id="startButton" aria-label="Spiel starten">Spiel starten</button>
+        </div>
+        
+        <canvas id="gameCanvas" aria-label="Spielfeld"></canvas>
+        
+        <div id="gameOverScreen" aria-label="Game Over Bildschirm" style="display: none;">
+            <h2>Game Over</h2>
+            <p id="finalScore" aria-label="Endergebnis"></p>
+            <button id="restartButton" aria-label="Spiel neu starten">Nochmal spielen</button>
         </div>
     </main>
-    
-    <footer>
-        <p>&copy; 2024 Snake Game</p>
-    </footer>
-    
-    <script type="module" src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellbestätigung - Shop</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="notification-area"></div>
+        
+        <header id="header-container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <a href="./index.html">Shop</a>
+                </h1>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="./index.html">Produkte</a></li>
+                        <li>
+                            <a href="./cart.html">
+                                Warenkorb
+                                <span id="cart-badge" class="badge">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <div class="success-state">
+                <h1>Vielen Dank für Ihre Bestellung!</h1>
+                <p>Ihre Bestellung wurde erfolgreich simuliert.</p>
+                
+                <h2>Bestellübersicht</h2>
+                <div id="confirmation-items-list"></div>
+                <p>Gesamtsumme: <span id="confirmation-total">0,00 €</span></p>
+                
+                <h2>Lieferadresse</h2>
+                <div id="confirmation-address"></div>
+                
+                <button class="btn-primary" onclick="window.location.href='./index.html'">Weiter einkaufen</button>
+            </div>
+        </main>
+
+        <footer id="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 Shop. Alle Rechte vorbehalten.</p>
+                <nav>
+                    <ul class="footer-nav">
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./confirmation.js"></script>
+</body>
+</html>

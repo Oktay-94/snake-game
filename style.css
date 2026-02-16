@@ -1,0 +1,243 @@
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --color-start: #4CAF50;
+    --color-start-hover: #45a049;
+    --color-restart: #f44336;
+    --color-restart-hover: #da190b;
+    --color-button-text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+#gameCanvas {
+    width: 600px;
+    height: 600px;
+    background-color: var(--bg-secondary);
+    border: 3px solid var(--text-primary);
+    border-radius: 8px;
+    display: block;
+}
+
+#scoreDisplay {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-primary);
+    z-index: 10;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(26, 26, 26, 0.95);
+    z-index: 100;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+#startScreen {
+    display: flex;
+}
+
+#gameScreen {
+    display: none;
+}
+
+#gameOverScreen {
+    display: none;
+}
+
+.screen h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.screen h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.screen p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+#finalScore {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--color-start);
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--color-button-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#startButton {
+    background-color: var(--color-start);
+}
+
+#startButton:hover {
+    background-color: var(--color-start-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+#startButton:active {
+    transform: translateY(0);
+}
+
+#restartButton {
+    background-color: var(--color-restart);
+}
+
+#restartButton:hover {
+    background-color: var(--color-restart-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+#restartButton:active {
+    transform: translateY(0);
+}
+
+button:focus {
+    outline: 3px solid var(--text-primary);
+    outline-offset: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    #gameContainer {
+        max-width: 90vw;
+    }
+
+    #gameCanvas {
+        width: 90vw;
+        height: 90vw;
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    #scoreDisplay {
+        top: -45px;
+        font-size: 20px;
+    }
+
+    .screen h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .screen h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .screen p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    #finalScore {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #gameCanvas {
+        width: 95vw;
+        height: 95vw;
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    #scoreDisplay {
+        top: -40px;
+        font-size: 18px;
+    }
+
+    .screen h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .screen h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .screen p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    #finalScore {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}

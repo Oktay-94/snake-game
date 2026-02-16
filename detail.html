@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktdetails - Tech-Shop</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <header id="header-container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="./index.html">Tech-Shop</a>
+                </div>
+                <nav class="main-nav">
+                    <a href="./index.html">Produkte</a>
+                    <a href="./cart.html">
+                        Warenkorb
+                        <span id="cart-badge" class="badge hidden">0</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section id="loading-overlay" class="loading hidden">
+                <div class="spinner"></div>
+            </section>
+
+            <div id="product-detail-container">
+                <div class="product-images">
+                </div>
+                <div class="product-info">
+                    <h1 id="product-name"></h1>
+                    <p id="product-grade"></p>
+                    <p id="product-price"></p>
+                    <div id="product-description"></div>
+                    <div id="product-accessories"></div>
+                    <button id="add-to-cart-btn" class="btn-primary">Zum Warenkorb hinzufügen</button>
+                    <a href="./index.html">Zurück zur Übersicht</a>
+                </div>
+            </div>
+
+            <div id="error-state" class="error-state hidden">
+                <p>Produkt nicht gefunden</p>
+                <a href="./index.html">Zurück zur Übersicht</a>
+            </div>
+        </main>
+
+        <footer id="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 Tech-Shop. Alle Rechte vorbehalten.</p>
+                <nav class="footer-nav">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
+                </nav>
+            </div>
+        </footer>
+
+        <div id="notification-area"></div>
+    </div>
+
+    <script src="./detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb - Shop</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <header id="header-container">
+            <nav>
+                <div class="nav-brand">
+                    <a href="./index.html">Shop</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="./index.html">Produkte</a></li>
+                    <li><a href="./cart.html" class="active">Warenkorb</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="./cart.html" class="cart-link">
+                        <span class="cart-icon">🛒</span>
+                        <span id="cart-badge" class="badge hidden">0</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <h1>Warenkorb</h1>
+            <div id="cart-items-container"></div>
+            <div class="empty-state hidden">
+                <p>Ihr Warenkorb ist leer</p>
+                <a href="./index.html">Zurück zum Shop</a>
+            </div>
+            <div class="cart-summary">
+                <p>Gesamtsumme: <span id="cart-total">0,00 €</span></p>
+                <button id="checkout-btn" class="btn-primary disabled">Zur Kasse</button>
+            </div>
+        </main>
+
+        <footer id="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Über uns</h3>
+                    <p>Ihr Online-Shop für qualitativ hochwertige Produkte.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>Email: info@shop.de</p>
+                    <p>Tel: 0123-456789</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="./index.html">Startseite</a></li>
+                        <li><a href="./cart.html">Warenkorb</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shop. Alle Rechte vorbehalten.</p>
+            </div>
+        </footer>
+
+        <div id="notification-area"></div>
+    </div>
+
+    <script src="./cart.js"></script>
+</body>
+</html>

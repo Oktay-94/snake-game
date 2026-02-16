@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klassisches Snake-Spiel">
     <title>Snake Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Snake Game</h1>
+        <p class="controls">Steuerung: Pfeiltasten zum Bewegen | Leertaste für Neustart</p>
     </header>
+    
     <main>
-        <section>
-            <div id="game-container">
-                <canvas id="gameCanvas" width="800" height="800"></canvas>
+        <div class="game-container">
+            <div class="score-display">
+                <span>Punkte: </span>
+                <span id="score">0</span>
             </div>
-            <div id="score-display"></div>
-            <div id="game-status"></div>
-            <button id="restart-btn">Neustart</button>
-        </section>
+            
+            <canvas id="gameCanvas" width="600" height="600"></canvas>
+            
+            <div id="gameOver" class="game-over-overlay">
+                <div class="game-over-content">
+                    <h2>Game Over!</h2>
+                    <p class="final-score">Finale Punktzahl: <span id="finalScore">0</span></p>
+                    <button id="restartButton">Neustart</button>
+                </div>
+            </div>
+        </div>
     </main>
+    
     <footer>
-        <p>&copy; 2024 Snake Game - Viel Spaß beim Spielen!</p>
+        <p>&copy; 2024 Snake Game</p>
     </footer>
-    <script src="script.js"></script>
+    
+    <script type="module" src="script.js"></script>
 </body>
 </html>

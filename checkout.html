@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellabschluss - Webshop</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <header id="header-container">
+            <div class="header-content">
+                <h1 class="logo"><a href="./index.html">Webshop</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Produkte</a></li>
+                        <li><a href="./cart.html">Warenkorb <span id="cart-badge" class="badge">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <h1>Bestellabschluss</h1>
+            <div class="checkout-container">
+                <div class="order-summary">
+                    <h2>Ihre Bestellung</h2>
+                    <div id="checkout-items-list"></div>
+                    <p>Gesamtsumme: <span id="checkout-total">0,00 €</span></p>
+                </div>
+
+                <form id="checkout-form">
+                    <fieldset>
+                        <legend>Persönliche Daten</legend>
+                        <input required type="text" id="firstname" name="firstname" placeholder="Vorname">
+                        <span class="error hidden"></span>
+                        <input required type="text" id="lastname" name="lastname" placeholder="Nachname">
+                        <span class="error hidden"></span>
+                        <input required type="email" id="email" name="email" placeholder="E-Mail">
+                        <span class="error hidden"></span>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Lieferadresse</legend>
+                        <input required type="text" id="street" name="street" placeholder="Straße">
+                        <span class="error hidden"></span>
+                        <input required type="text" id="housenumber" name="housenumber" placeholder="Hausnummer">
+                        <span class="error hidden"></span>
+                        <input required type="text" id="zipcode" name="zipcode" placeholder="PLZ">
+                        <span class="error hidden"></span>
+                        <input required type="text" id="city" name="city" placeholder="Ort">
+                        <span class="error hidden"></span>
+                        <input required type="text" id="country" name="country" placeholder="Land" value="Deutschland">
+                        <span class="error hidden"></span>
+                    </fieldset>
+
+                    <button type="submit" class="btn-primary">Jetzt bestellen</button>
+                </form>
+            </div>
+        </main>
+
+        <footer id="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 Webshop. Alle Rechte vorbehalten.</p>
+                <nav>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+
+        <div id="notification-area"></div>
+    </div>
+
+    <script src="./checkout.js"></script>
+</body>
+</html>

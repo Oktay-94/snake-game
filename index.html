@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Snake Game</h1>
+        </header>
+        <main>
+            <section id="scoreDisplay">
+                <p>Score: <span id="score">0</span></p>
+            </section>
+            <section id="gameContainer">
+                <canvas id="gameCanvas"></canvas>
+                <div id="startScreen" class="overlay">
+                    <h2>Willkommen bei Snake!</h2>
+                    <p>Benutze die Pfeiltasten zur Steuerung</p>
+                    <button id="startButton">Spiel starten</button>
+                </div>
+                <div id="gameOverScreen" class="overlay hidden">
+                    <h2>Game Over!</h2>
+                    <p>Dein Score: <span id="finalScore">0</span></p>
+                    <button id="restartButton">Nochmal spielen</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

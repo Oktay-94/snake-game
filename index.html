@@ -11,14 +11,18 @@
         <h1>Snake Game</h1>
     </header>
     <main>
-        <div id="score-display">Punkte: <span id="score">0</span></div>
-        <canvas id="game-canvas" width="400" height="400"></canvas>
-        <div id="game-over" class="hidden">
-            <h2>Game Over!</h2>
-            <p>Dein Punktestand: <span id="final-score">0</span></p>
-            <button id="restart-button">Neues Spiel starten</button>
-        </div>
+        <section>
+            <div id="game-container">
+                <canvas id="gameCanvas" width="800" height="800"></canvas>
+            </div>
+            <div id="score-display"></div>
+            <div id="game-status"></div>
+            <button id="restart-btn">Neustart</button>
+        </section>
     </main>
-    <script src="game.js"></script>
+    <footer>
+        <p>&copy; 2024 Snake Game - Viel Spaß beim Spielen!</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

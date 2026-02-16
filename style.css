@@ -1,0 +1,376 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ROOT VARIABLES */
+:root {
+  /* Colors */
+  --color-primary: #00d4ff;
+  --color-secondary: #ff6b00;
+  --color-background: #0a0e27;
+  --color-surface: #1a1f3a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a8c0;
+  --color-track-surface: #2d3250;
+  --color-track-border: #ff3366;
+  --color-track-line: #ffff00;
+  --color-success: #00ff88;
+  --color-error: #ff3366;
+  --color-warning: #ffaa00;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+
+  /* Typography */
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 32px;
+
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+}
+
+/* GLOBAL STYLES */
+body {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#app-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 300px;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface);
+  padding: 16px;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  grid-column: 1 / -1;
+}
+
+/* MAIN GAME AREA */
+main {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+#game-canvas {
+  max-width: 100%;
+  max-height: 80vh;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* SIDEBAR */
+#sidebar {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: var(--color-surface);
+  padding: 24px;
+  overflow-y: auto;
+  border-left: 2px solid var(--color-primary);
+}
+
+#sidebar section {
+  margin-bottom: 24px;
+}
+
+#sidebar h3 {
+  color: var(--color-primary);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+#sidebar span {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+#lap-times-list {
+  list-style: none;
+  padding: 0;
+}
+
+#lap-times-list li {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* UTILITY CLASSES */
+.hidden {
+  display: none !important;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.loading {
+  cursor: wait;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 39, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease-in;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* SCREENS */
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--color-background);
+  z-index: 2000;
+}
+
+#loading-screen .spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(0, 212, 255, 0.3);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+#start-screen {
+  max-width: 600px;
+  gap: 24px;
+}
+
+#result-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 39, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#result-screen .card {
+  max-width: 500px;
+}
+
+#error-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 39, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#error-screen .error-icon {
+  color: var(--color-error);
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* FOOTER */
+footer {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  background: var(--color-surface);
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #app-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  main {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+
+  #sidebar {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    border-left: none;
+    border-top: 2px solid var(--color-primary);
+  }
+
+  footer {
+    grid-row: 4 / 5;
+  }
+
+  #game-canvas {
+    max-width: 100%;
+    max-height: 60vh;
+  }
+
+  header {
+    font-size: 24px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  #sidebar h3 {
+    font-size: 16px;
+  }
+
+  #sidebar span {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}

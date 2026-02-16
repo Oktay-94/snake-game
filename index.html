@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Racer - 2D Racing Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="loading-screen" class="overlay">
+            <h1>Lade Spiel...</h1>
+            <div class="pulse"></div>
+        </div>
+
+        <div id="start-screen" class="overlay hidden">
+            <h1>Vanilla Racer</h1>
+            <p>Steuerung: Pfeiltasten zum Lenken und Beschleunigen<br>P für Pause</p>
+            <button id="start-btn" class="btn-primary">Spiel starten</button>
+        </div>
+
+        <div id="game-canvas" class="hidden">
+            <canvas width="1200" height="800"></canvas>
+        </div>
+
+        <div id="game-hud" class="hidden">
+            <div id="time-display"></div>
+            <div id="score-display"></div>
+        </div>
+
+        <div id="pause-overlay" class="overlay hidden">
+            <h2>Spiel pausiert</h2>
+            <p>Drücke P zum Fortfahren</p>
+            <button id="continue-btn" class="btn-secondary">Fortfahren</button>
+        </div>
+
+        <div id="gameover-overlay" class="overlay hidden">
+            <h2>GAME OVER!</h2>
+            <p id="final-time-display"></p>
+            <p id="final-score-display"></p>
+            <button id="restart-btn" class="btn-primary">Nochmal spielen</button>
+        </div>
+
+        <div id="error-overlay" class="overlay error-msg hidden">
+            <h2>Fehler</h2>
+            <p id="error-message-text"></p>
+            <button class="btn-secondary">OK</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+{
+  "products": [
+    {
+      "id": "ap-pro2-a-001",
+      "name": "AirPods Pro 2. Generation",
+      "grade": "Grade A",
+      "price": 189.99,
+      "description": "Generalüberholte AirPods Pro der 2. Generation in exzellentem Zustand. Aktive Geräuschunterdrückung und adaptiver Transparenzmodus für ein unvergleichliches Hörerlebnis. Mit H2 Chip für verbesserte Audio-Qualität.",
+      "images": ["images/airpods-pro-1.jpg", "images/airpods-pro-2.jpg"],
+      "accessories": ["USB-C Ladecase", "Silikon-Ohrstöpsel (S/M/L)", "USB-C Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-pro2-b-002",
+      "name": "AirPods Pro 2. Generation",
+      "grade": "Grade B",
+      "price": 159.99,
+      "description": "Generalüberholte AirPods Pro der 2. Generation in sehr gutem Zustand. Leichte Gebrauchsspuren am Case, volle Funktionalität garantiert. Aktive Geräuschunterdrückung und adaptiver Transparenzmodus.",
+      "images": ["images/airpods-pro-1.jpg", "images/airpods-pro-2.jpg"],
+      "accessories": ["USB-C Ladecase", "Silikon-Ohrstöpsel (S/M/L)", "USB-C Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-pro2-c-003",
+      "name": "AirPods Pro 2. Generation",
+      "grade": "Grade C",
+      "price": 139.99,
+      "description": "Generalüberholte AirPods Pro der 2. Generation in gutem Zustand. Sichtbare Gebrauchsspuren, aber technisch einwandfrei. Perfekt für preisbewusste Käufer.",
+      "images": ["images/airpods-pro-1.jpg", "images/airpods-pro-2.jpg"],
+      "accessories": ["USB-C Ladecase", "Silikon-Ohrstöpsel (S/M/L)", "USB-C Kabel"]
+    },
+    {
+      "id": "ap-pro1-a-004",
+      "name": "AirPods Pro 1. Generation",
+      "grade": "Grade A",
+      "price": 139.99,
+      "description": "Generalüberholte AirPods Pro der 1. Generation in exzellentem Zustand. Aktive Geräuschunterdrückung, Transparenzmodus und anpassbare Passform. Lightning Ladecase inklusive.",
+      "images": ["images/airpods-pro-gen1-1.jpg", "images/airpods-pro-gen1-2.jpg"],
+      "accessories": ["Lightning Ladecase", "Silikon-Ohrstöpsel (S/M/L)", "Lightning Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-pro1-b-005",
+      "name": "AirPods Pro 1. Generation",
+      "grade": "Grade B",
+      "price": 119.99,
+      "description": "Generalüberholte AirPods Pro der 1. Generation in sehr gutem Zustand. Minimale Gebrauchsspuren, volle Funktionalität. Hervorragendes Preis-Leistungs-Verhältnis.",
+      "images": ["images/airpods-pro-gen1-1.jpg", "images/airpods-pro-gen1-2.jpg"],
+      "accessories": ["Lightning Ladecase", "Silikon-Ohrstöpsel (S/M/L)", "Lightning Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-3-a-006",
+      "name": "AirPods 3. Generation",
+      "grade": "Grade A",
+      "price": 129.99,
+      "description": "Generalüberholte AirPods der 3. Generation in exzellentem Zustand. Räumliches Audio mit dynamischem Head Tracking, adaptives EQ und schweißbeständiges Design. MagSafe Ladecase inklusive.",
+      "images": ["images/airpods-3-1.jpg", "images/airpods-3-2.jpg"],
+      "accessories": ["MagSafe Ladecase", "Lightning Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-3-b-007",
+      "name": "AirPods 3. Generation",
+      "grade": "Grade B",
+      "price": 109.99,
+      "description": "Generalüberholte AirPods der 3. Generation in sehr gutem Zustand. Leichte Nutzungsspuren am Case, technisch einwandfrei. Räumliches Audio und adaptives EQ.",
+      "images": ["images/airpods-3-1.jpg", "images/airpods-3-2.jpg"],
+      "accessories": ["MagSafe Ladecase", "Lightning Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-3-c-008",
+      "name": "AirPods 3. Generation",
+      "grade": "Grade C",
+      "price": 89.99,
+      "description": "Generalüberholte AirPods der 3. Generation in gutem Zustand. Deutliche Gebrauchsspuren, aber volle Funktionalität. Ideal für Sparfüchse.",
+      "images": ["images/airpods-3-1.jpg", "images/airpods-3-2.jpg"],
+      "accessories": ["MagSafe Ladecase", "Lightning Kabel"]
+    },
+    {
+      "id": "ap-2-a-009",
+      "name": "AirPods 2. Generation",
+      "grade": "Grade A",
+      "price": 79.99,
+      "description": "Generalüberholte AirPods der 2. Generation in exzellentem Zustand. Klassisches Design mit H1 Chip für schnelle Verbindung und Hey Siri Support. Perfekt für Einsteiger.",
+      "images": ["images/airpods-2-1.jpg", "images/airpods-2-2.jpg"],
+      "accessories": ["Lightning Ladecase", "Lightning Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-2-b-010",
+      "name": "AirPods 2. Generation",
+      "grade": "Grade B",
+      "price": 64.99,
+      "description": "Generalüberholte AirPods der 2. Generation in sehr gutem Zustand. Kleinere Gebrauchsspuren vorhanden, technisch vollständig funktionsfähig. Ausgezeichnetes Preis-Leistungs-Verhältnis.",
+      "images": ["images/airpods-2-1.jpg", "images/airpods-2-2.jpg"],
+      "accessories": ["Lightning Ladecase", "Lightning Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-max-a-011",
+      "name": "AirPods Max",
+      "grade": "Grade A",
+      "price": 399.99,
+      "description": "Generalüberholte AirPods Max in exzellentem Zustand. Premium Over-Ear Kopfhörer mit aktivem Noise Cancelling, räumlichem Audio und High-Fidelity Sound. Inklusive Smart Case in Space Grau.",
+      "images": ["images/airpods-max-1.jpg", "images/airpods-max-2.jpg"],
+      "accessories": ["Smart Case", "Lightning auf USB-C Kabel", "Dokumentation", "Reinigungstuch"]
+    },
+    {
+      "id": "ap-max-b-012",
+      "name": "AirPods Max",
+      "grade": "Grade B",
+      "price": 349.99,
+      "description": "Generalüberholte AirPods Max in sehr gutem Zustand. Leichte Gebrauchsspuren an den Ohrpolstern, volle Audio-Qualität garantiert. Premium Over-Ear Erlebnis zu einem fairen Preis.",
+      "images": ["images/airpods-max-1.jpg", "images/airpods-max-2.jpg"],
+      "accessories": ["Smart Case", "Lightning auf USB-C Kabel", "Dokumentation"]
+    },
+    {
+      "id": "ap-max-c-013",
+      "name": "AirPods Max",
+      "grade": "Grade C",
+      "price": 299.99,
+      "description": "Generalüberholte AirPods Max in gutem Zustand. Sichtbare Nutzungsspuren am Kopfbügel und den Ohrpolstern, aber technisch einwandfrei. Spitzensound zum Sparpreis.",
+      "images": ["images/airpods-max-1.jpg", "images/airpods-max-2.jpg"],
+      "accessories": ["Smart Case", "Lightning auf USB-C Kabel"]
+    },
+    {
+      "id": "ap-2-c-014",
+      "name": "AirPods 2. Generation",
+      "grade": "Grade C",
+      "price": 49.99,
+      "description": "Generalüberholte AirPods der 2. Generation in gutem Zustand. Deutliche Gebrauchsspuren sichtbar, aber volle Funktionalität. Der günstigste Einstieg in die AirPods-Welt.",
+      "images": ["images/airpods-2-1.jpg", "images/airpods-2-2.jpg"],
+      "accessories": ["Lightning Ladecase", "Lightning Kabel"]
+    }
+  ]
+}

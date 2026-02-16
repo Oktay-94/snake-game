@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professioneller Taschenrechner</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main id="calculator-container">
+        <section id="display-screen" role="region" aria-label="Rechner-Display">
+            <span id="memory-indicator" class="hidden">M</span>
+            <div id="display-value" aria-live="polite">0</div>
+        </section>
+        <div class="button-grid">
+            <button id="btn-memory-clear" data-value="MC" data-type="memory" class="btn btn-memory" aria-label="Speicher löschen">MC</button>
+            <button id="btn-memory-recall" data-value="MR" data-type="memory" class="btn btn-memory" aria-label="Speicher abrufen">MR</button>
+            <button id="btn-memory-add" data-value="M+" data-type="memory" class="btn btn-memory" aria-label="Zum Speicher addieren">M+</button>
+            <button id="btn-memory-subtract" data-value="M-" data-type="memory" class="btn btn-memory" aria-label="Vom Speicher subtrahieren">M-</button>
+            <button id="btn-clear" data-value="C" data-type="clear" class="btn btn-clear" aria-label="Alles löschen">C</button>
+            <button id="btn-clear-entry" data-value="CE" data-type="clear" class="btn btn-clear" aria-label="Eingabe löschen">CE</button>
+            <button id="btn-delete" data-value="DEL" data-type="clear" class="btn btn-clear" aria-label="Letzte Ziffer löschen">DEL</button>
+            
+            <button id="btn-sqrt" data-value="√" data-type="function" class="btn btn-function" aria-label="Quadratwurzel">√</button>
+            <button id="btn-percent" data-value="%" data-type="function" class="btn btn-function" aria-label="Prozent">%</button>
+            <button id="btn-reciprocal" data-value="1/x" data-type="function" class="btn btn-function" aria-label="Kehrwert">1/x</button>
+            <button id="btn-divide" data-value="÷" data-type="operator" class="btn btn-operator" aria-label="Division">÷</button>
+            
+            <button id="btn-7" data-value="7" data-type="number" class="btn btn-number" aria-label="Sieben">7</button>
+            <button id="btn-8" data-value="8" data-type="number" class="btn btn-number" aria-label="Acht">8</button>
+            <button id="btn-9" data-value="9" data-type="number" class="btn btn-number" aria-label="Neun">9</button>
+            <button id="btn-multiply" data-value="×" data-type="operator" class="btn btn-operator" aria-label="Multiplikation">×</button>
+            
+            <button id="btn-4" data-value="4" data-type="number" class="btn btn-number" aria-label="Vier">4</button>
+            <button id="btn-5" data-value="5" data-type="number" class="btn btn-number" aria-label="Fünf">5</button>
+            <button id="btn-6" data-value="6" data-type="number" class="btn btn-number" aria-label="Sechs">6</button>
+            <button id="btn-subtract" data-value="-" data-type="operator" class="btn btn-operator" aria-label="Subtraktion">-</button>
+            
+            <button id="btn-1" data-value="1" data-type="number" class="btn btn-number" aria-label="Eins">1</button>
+            <button id="btn-2" data-value="2" data-type="number" class="btn btn-number" aria-label="Zwei">2</button>
+            <button id="btn-3" data-value="3" data-type="number" class="btn btn-number" aria-label="Drei">3</button>
+            <button id="btn-add" data-value="+" data-type="operator" class="btn btn-operator" aria-label="Addition">+</button>
+            
+            <button id="btn-negate" data-value="+/-" data-type="function" class="btn btn-function" aria-label="Vorzeichen wechseln">+/-</button>
+            <button id="btn-0" data-value="0" data-type="number" class="btn btn-number" aria-label="Null">0</button>
+            <button id="btn-decimal" data-value="." data-type="number" class="btn btn-number" aria-label="Dezimalpunkt">.</button>
+            <button id="btn-equals" data-value="=" data-type="equals" class="btn btn-operator" aria-label="Gleich">=</button>
+        </div>
+    </main>
+    <script src="./script.js" defer></script>
+</body>
+</html>

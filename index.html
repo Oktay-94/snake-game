@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Snake Game</h1>
+    </header>
+    <main>
+        <div id="score" aria-live="polite" aria-label="Aktueller Punktestand">Score: 0</div>
+        <canvas id="gameCanvas" width="400" height="400" aria-label="Spielfeld"></canvas>
+        <button id="startBtn" aria-label="Spiel starten">Start Game</button>
+        <div id="gameOver" style="display: none;" role="alert" aria-label="Spiel vorbei">
+            <h2>Game Over!</h2>
+            <p id="finalScore" aria-label="Endgültiger Punktestand">Final Score: 0</p>
+            <button id="restartBtn" aria-label="Spiel neu starten">Restart Game</button>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

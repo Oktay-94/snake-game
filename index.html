@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Racer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header id="app-header">
+        <h1>Static Racer</h1>
+    </header>
+
+    <main id="app-container">
+        <div id="loading-screen" class="screen">
+            <div class="text-center">
+                <div class="pulse">⟳</div>
+                <p>Lade Static Racer...</p>
+            </div>
+        </div>
+
+        <div id="start-screen" class="screen hidden">
+            <div class="card text-center">
+                <h2>Willkommen bei Static Racer</h2>
+                <div class="card">
+                    <h3>Spielanleitung</h3>
+                    <p>Steuere dein Fahrzeug mit der Tastatur:</p>
+                    <ul>
+                        <li>Pfeiltasten oder WASD zur Steuerung</li>
+                        <li>↑ / W: Beschleunigen</li>
+                        <li>↓ / S: Bremsen</li>
+                        <li>← / A: Links lenken</li>
+                        <li>→ / D: Rechts lenken</li>
+                    </ul>
+                </div>
+                <button id="start-button" class="btn btn-primary">Rennen starten</button>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <canvas id="game-canvas" width="1200" height="800"></canvas>
+        </div>
+
+        <div id="result-screen" class="screen hidden overlay">
+            <div class="card text-center">
+                <h2>Rennen beendet!</h2>
+                <div id="total-time" class="success">
+                    <strong>Gesamtzeit:</strong> <span>0.00s</span>
+                </div>
+                <div>
+                    <h3>Rundenzeiten</h3>
+                    <ul id="lap-times-list"></ul>
+                </div>
+                <button id="restart-button" class="btn btn-primary">Neues Rennen</button>
+            </div>
+        </div>
+
+        <div id="error-screen" class="screen hidden overlay">
+            <div class="card text-center error">
+                <div class="text-center">
+                    <span class="error-icon">⚠</span>
+                </div>
+                <h2>Fehler</h2>
+                <p id="error-message">Ein Fehler ist aufgetreten.</p>
+                <button id="retry-button" class="btn btn-secondary">Erneut versuchen</button>
+            </div>
+        </div>
+    </main>
+
+    <aside id="sidebar">
+        <div class="card">
+            <h3>Steuerung</h3>
+            <div>
+                <kbd>↑</kbd> <kbd>W</kbd> Beschleunigen<br>
+                <kbd>↓</kbd> <kbd>S</kbd> Bremsen<br>
+                <kbd>←</kbd> <kbd>A</kbd> Links<br>
+                <kbd>→</kbd> <kbd>D</kbd> Rechts
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Runde</h3>
+            <p><span id="current-lap">0</span></p>
+        </div>
+
+        <div class="card">
+            <h3>Rundenzeit</h3>
+            <p><span id="current-lap-time">0.00s</span></p>
+        </div>
+
+        <div class="card">
+            <h3>Gesamtzeit</h3>
+            <p><span id="total-time-sidebar">0.00s</span></p>
+        </div>
+
+        <div class="card">
+            <h3>Rundenzeiten</h3>
+            <ul id="lap-times-list-sidebar"></ul>
+        </div>
+    </aside>
+
+    <footer>
+        <p>&copy; 2024 Static Racer. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
